@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  height: 100vh;
+  /* width: 100vw;  */
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  /* height: 100%; */
+  height: auto;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  /* overflow-y: auto; */
+}
+
+.container h1 {
+  /* color: #333333; */
+  font-family: "Poppins", sans-serif;
+  margin: 20px 0;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin-top: 2px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 32%;
+  height: auto;
+  /* overflow-y: hidden; */
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  /* border-radius: 10px; */
+  overflow: hidden;
+}
+
+.card img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  /* height: auto; */
+  box-shadow: 0 0 20px #333;
+  filter: grayscale(100);
+  object-fit: cover;
+  /* object-fit:fill; */
+}
+
+.card:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 10px #333);
+  transition: 0.3s;
+}
+
+.card:hover img {
+  filter: grayscale(0);
+}
+
+.card figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  width: 100%;
+  height: 20%;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  /* border-radius: 0 0 10x 10px; */
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.card:hover figcaption {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.last {
+  text-align: center;
+  margin-top: 10px;
+  background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.footer-links {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.image {
+  height: 20px;
+  width: 20px;
+  border-radius: 70%;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: 340px; /* Adjust this height as needed */
+  }
+
+  .gallery{
+    display:flex;
+    flex-direction: column;
+    /* padding-right: 10px; */
+  }
+
+  .container h1  {
+    /* position: relative; */
+    /* width: 100%; */
+    /* margin: auto; */
+    /* margin-left: 0%; */
+    margin-left: 35px;
+    text-align: left;
+  }
+
+  .footer-links{
+    margin-left: 130px;
+    text-align: left;
+  }
+
+  .last{
+    text-align: left;
+    margin-left: 65px;
+  }
+
+
+}
+
+
+/* * margin 2,2 -- top bottom left right */ */
+/* wrapper ke div hai, div ek block element h toh width dene ki need nhi */
+/* max-width km content toh utna hi uss se jyada ni ho payega na badh payega */
+/* flex wrap wrap toh space km toh neeche aajayege */
+/* space between beech m space equal and left right ki equal */
+/* wrapper means whole body, container have h1 and all images, saari images ko gallery class m rakh diya and container flex and gallery ke andar 15 cards vo flex item */
+/* saare cards gallery ke andar hai, container ki kuch space toh h1 le gaya and baaki space gallery ko mili, gallery flex hai */
+/* card ki width 32%, 1200 ka 32 % and rest beech ki space */
+/* card ki toh width 32% ho gayi par image overflow kar rahi,card relative so we can absolute the image1 image2 texts, ovrflow hidden jiss se ki image iske andar hi rahe */
+/* img ki width card ke width ke 100%, 32% card ki thi */
+/* card img m 100% nhi lagaya toh corner neeche ke sharp kyuki vo corner img ke hai, card ke nhi, img ki height 100% kardi toh poore m image and card ke corner round, chup gaya basically */
+/* object fit se jyada farak ni padega kuch */
+/* flex m height poori lete the row main across ke hai toh, same with cross axis */
+/* image ko 32% width toh vo automatically ek particular height lelega, toh card  */
+/* figcaption ka parent h card, toh uski width ka 100% and height 20%, opacity 0 means full transparent yani dikhna hi ni chahiye  */
+/* border-radius clockwise chlega, top left top right bottom right and bottom left  */
+/* background: This is a CSS property that sets the background of an element. */
+/* 
+(0deg): This is the angle of the gradient. In this case, 0deg means that the gradient goes from top to bottom, vertically.
+0%: This is the starting point of the gradient, represented as a percentage of the element's height. The color rgba(0, 0, 0, 0.5) will be at the top of the element (0% position).
+100%: This is the ending point of the gradient, represented as a percentage of the element's height. The color rgba(255, 255, 255, 0) will be at the bottom of the element (100% position). */
